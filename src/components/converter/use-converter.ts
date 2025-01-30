@@ -24,7 +24,12 @@ export const useConverter = () => {
     const numMin = Number(min);
     const numMax = Number(max);
 
-    if (isNaN(numValue) || numValue < 0) {
+    if (!value || isNaN(numValue)) {
+      setNumber(0);
+      return;
+    }
+
+    if (numValue < 0) {
       alert("Wprowadź liczbę naturalną (całkowitą i nieujemną).");
       return;
     }
