@@ -8,7 +8,11 @@ export const CistercianNumeral = ({ number }: { number: number }) => {
     []
   );
   return (
-    <svg viewBox="-1.5 -1 3 5" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      className="rune-number"
+      viewBox="-1.5 -1 3 5"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <style>{`
           polyline {
             fill: none;
