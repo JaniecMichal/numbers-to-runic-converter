@@ -1,5 +1,5 @@
 import { NumberInput } from "../number-input";
-import { CistercianNumeral } from "../rune-number";
+import { RuneNumber } from "../rune-number";
 import { Button } from "../button";
 import { useConverter } from "./use-converter";
 
@@ -9,7 +9,7 @@ export const Converter = () => {
   return (
     <div>
       <NumberInput number={number} onChange={handleChange} />
-      <CistercianNumeral number={number} />
+      <RuneNumber number={number} />
       <Button onClick={handleDownload}>Pobierz</Button>
     </div>
   );

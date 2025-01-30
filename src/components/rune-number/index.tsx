@@ -2,7 +2,7 @@ import { useCallback } from "react";
 
 import { Digit } from "./digit";
 
-export const CistercianNumeral = ({ number }: { number: number }) => {
+export const RuneNumber = ({ number }: { number: number }) => {
   const getDigits = useCallback(
     (number: number) => number.toString().split("").reverse(),
     []
