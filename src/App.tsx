@@ -5,7 +5,7 @@ const App = () => {
   return (
     <MainWrapper>
       <header>
-        <h1>Number to runes converter</h1>
+        <h1 className="main-header">Number to runes converter</h1>
       </header>
       <Converter />
     </MainWrapper>
