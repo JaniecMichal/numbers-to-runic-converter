@@ -1,9 +1,25 @@
 import { useState } from "react";
+import { saveAs } from "file-saver";
 import { NumberInput } from "../number-input";
 import { CistercianNumeral } from "../rune-number";
+import { Button } from "../button";
 
 export const Converter = () => {
   const [number, setNumber] = useState(2025);
+
+  const handleDownload = () => {
+    const svgElement = document.querySelector(".rune-number");
+
+    if (svgElement) {
+      const svgString = new XMLSerializer().serializeToString(svgElement);
+      const svgBlob = new Blob([svgString], {
+        type: "image/svg+xml;charset=utf-8",
+      });
+      saveAs(svgBlob, `rune-number_${number}.svg`);
+    } else {
+      console.error("Nie znaleziono elementu SVG.");
+    }
+  };
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { value, min, max } = event.target;
@@ -31,7 +47,8 @@ export const Converter = () => {
   return (
     <div>
       <NumberInput number={number} onChange={handleChange} />
-      <CistercianNumeral number={number} />{" "}
+      <CistercianNumeral number={number} />
+      <Button onClick={handleDownload}>Pobierz</Button>
     </div>
   );
 };
